@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://4xihol23ienn"]
+
+[ext_resource type="Script" path="res://scripts/numplace.gd" id="1_md8no"]
+[ext_resource type="Texture2D" uid="uid://c0mpemcx5m0yc" path="res://assets/numtex/0.svg" id="1_p2trq"]
+[ext_resource type="Texture2D" uid="uid://hts451cl7j7y" path="res://assets/numtex/1-1.svg" id="3_7fmc1"]
+[ext_resource type="Texture2D" uid="uid://bh1hgci6y7ysy" path="res://assets/numtex/3-1.svg" id="4_1hcf5"]
+[ext_resource type="Texture2D" uid="uid://d3erusg6d2o2n" path="res://assets/numtex/9-1.svg" id="5_kfkbl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5jm4c"]
+line_spacing = 0.0
+font_size = 45
+
+[node name="Numplace_CTRL" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_md8no")
+
+[node name="VBoxCtrl" type="VBoxContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxCtrl"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "0"
+label_settings = SubResource("LabelSettings_5jm4c")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxCtrl/Label"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 2.0
+editor_only = false
+
+[node name="RatioCtrl" type="AspectRatioContainer" parent="VBoxCtrl"]
+layout_mode = 2
+size_flags_vertical = 3
+ratio = 1.1548
+
+[node name="tex0" type="TextureRect" parent="VBoxCtrl/RatioCtrl"]
+layout_mode = 2
+texture = ExtResource("1_p2trq")
+expand_mode = 1
+
+[node name="tex1" type="TextureRect" parent="VBoxCtrl/RatioCtrl"]
+layout_mode = 2
+texture = ExtResource("3_7fmc1")
+expand_mode = 1
+
+[node name="tex2" type="TextureRect" parent="VBoxCtrl/RatioCtrl"]
+layout_mode = 2
+texture = ExtResource("4_1hcf5")
+expand_mode = 1
+
+[node name="tex3" type="TextureRect" parent="VBoxCtrl/RatioCtrl"]
+layout_mode = 2
+texture = ExtResource("5_kfkbl")
+expand_mode = 1
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxCtrl/RatioCtrl"]
+visible = false
+layout_mode = 2
+border_width = 2.0
+editor_only = false
